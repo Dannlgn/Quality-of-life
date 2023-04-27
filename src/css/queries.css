@@ -1,0 +1,105 @@
+@media only screen and (max-width: 767px) {
+  /* stili per smartphone */
+
+  h2 {
+    font-size: 1.4em;
+  }
+  .score-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+
+  /* Left */
+  .desc-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .img-container {
+    width: 90%;
+  }
+
+  #img-citta {
+    width: 100%;
+    border: 1px solid rgba(65, 65, 65, 0.383);
+    border-radius: 5px;
+    box-shadow: 0px 0px 7px -2px #a3a3a3cd;
+  }
+
+  /* Right */
+  .categories-container {
+    width: 100%;
+  }
+  .scores {
+    width: 90%;
+  }
+
+  #city-description {
+    margin-bottom: 25px;
+  }
+
+  /* center */
+  .div-center {
+    width: 50%;
+  }
+
+  /* footer */
+  .socials {
+    justify-content: space-between;
+    margin: auto;
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  /* stili per tablet */
+  .score-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+
+  /* Left */
+  .desc-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .img-container {
+    width: 90%;
+  }
+
+  #img-citta {
+    width: 100%;
+    border: 1px solid rgba(65, 65, 65, 0.383);
+    border-radius: 5px;
+    box-shadow: 0px 0px 7px -2px #a3a3a3cd;
+  }
+
+  /* Right */
+  .categories-container {
+    width: 100%;
+  }
+  .scores {
+    width: 90%;
+  }
+
+  #city-description {
+    margin-bottom: 25px;
+  }
+  /* footer */
+  .socials {
+    justify-content: space-between;
+    margin: auto;
+    width: 30%;
+  }
+}

@@ -1,19 +1,24 @@
+import "../css/styles.css";
+import "../css/queries.css";
+
+
 const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("searchbtn");
-const searchSection = document.getElementById("search-section");
 const cityScore = document.getElementById("city-score");
 const cityDesc = document.getElementById("city-description");
 const cityImg = document.getElementById("img-citta");
 const scoreTitle = document.getElementById("score-title");
 const categoriesDiv = document.getElementById("categories");
-const categoriesDivName = document.getElementsByClassName("categories-name");
 const categoriesTitle = document.getElementById("categories-title");
 const mediaQueryMobile = window.matchMedia("(max-width: 1023px)");
 const errorContainer = document.getElementById("error-container");
 const resultsSection = document.querySelector(".results");
-
 let cityName;
 
+// API
+const API_URL = process.env.API_SCORE;
+
+//Fetch dei dati
 async function getData() {
   if (searchInput.value == "") {
     getError();
@@ -25,7 +30,7 @@ async function getData() {
 
     //scores
     axios
-      .get(`https://api.teleport.org/api/urban_areas/slug:${cityName}/scores/`)
+      .get(`${API_URL}${cityName}/scores/`)
       .then((res) => {
         //Aggiungo titolo pagina sinistra
         const titleText = "Quality of life in " + cityName;
@@ -88,9 +93,7 @@ async function getData() {
         });
         //images
         axios
-          .get(
-            `https://api.teleport.org/api/urban_areas/slug:${cityName}/images/`
-          )
+          .get(`${API_URL}${cityName}/images/`)
           .then((res) => {
             const cityImgLink = res.data.photos[0].image;
             //seleziono l'img in base alla media query

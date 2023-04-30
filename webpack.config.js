@@ -4,6 +4,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Dotenv = require("dotenv-webpack");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV == "production";
 
@@ -15,6 +16,7 @@ const config = {
   entry: "./src/js/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
+    assetModuleFilename: "img/banner-logo.png",
   },
   devServer: {
     open: true,
@@ -25,7 +27,10 @@ const config = {
       template: "./src/index.html",
     }),
     new MiniCssExtractPlugin({
-      filename: "./src/css/styles.css",
+      filename: "css/styles.css",
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: "src/img", to: "img" }],
     }),
     new Dotenv({
       systemvars: true,
@@ -39,15 +44,12 @@ const config = {
       },
       {
         test: /\.(css|s[ac]ss)$/i,
-        use: [stylesHandler, "style-loader", "css-loader", "sass-loader"],
+        use: [stylesHandler, "css-loader", "sass-loader"],
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
         type: "asset",
       },
-
-      // Add your rules for custom modules here
-      // Learn more about loaders from https://webpack.js.org/loaders/
     ],
   },
 };

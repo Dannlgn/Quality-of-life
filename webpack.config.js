@@ -33,8 +33,8 @@ const config = {
       patterns: [{ from: "src/img", to: "img" }],
     }),
     new Dotenv({
-      systemvars: true,
-    }),
+      systemvars: true
+  }),
   ],
   module: {
     rules: [

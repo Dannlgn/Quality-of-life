@@ -57,7 +57,7 @@ The purpose of this project is to check the quality of life in a city your choic
 
 ## Usage
 
-Just go the <a href="https://quality-of-life-cityapp.netlify.app" target="_blank">website</a> and search for a city of your interest!
+Just go to the <a href="https://quality-of-life-cityapp.netlify.app" target="_blank">website</a> and search for a city of your interest!
 <br>
 <br>
 Note: Cities can only be found if the request is in english. 
